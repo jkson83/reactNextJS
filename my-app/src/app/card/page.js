@@ -46,10 +46,9 @@ function CardItem(){
 function CardWrapper({datalist}){ 
       return(
     <div className="card-wrapper">
-      <h1>Card Page</h1>
       <CardProvider initialList={datalist}>
-        <CardItem />
         <InfoArea />
+        <CardItem />
       </CardProvider>
     </div>
   );
