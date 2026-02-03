@@ -1,0 +1,10 @@
+import Lnb from "../../components/Lnb";
+
+export default function DashboardLayout({ children }) {
+  return (
+    <div className="container">
+      <Lnb />
+      <main>{children}</main>
+    </div>
+  );
+}
