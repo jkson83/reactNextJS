@@ -2,8 +2,9 @@
 import { useContext, useState } from 'react';
 import {CardContext} from './CardContext';
 import WritePage from './writePage';
+import Button from '@/components/Button';
 
-export default function InfoArea(){
+export default function InfoArea({onClose}) {
   const { list,  selectedId, deleteCard } = useContext(CardContext); //선택된 카드 컴포넌트
   let tabTitle = "카드정보";
   const selectedItem = list.find(item => item.id === selectedId);
@@ -29,6 +30,8 @@ export default function InfoArea(){
     );
   }
 
+//  const onClose = () => { onClose(); };
+
   return(
     <div className="info-area">
       <h1>{tabTitle}</h1>
@@ -38,6 +41,7 @@ export default function InfoArea(){
           <>
             <button onClick={() => setMode('edit')}>수정</button>
             <button onClick={() => deleteCard(selectedId)}>삭제</button>
+            {/* <Button action="cancel" onAction = {onClose} /> */}
           </>
         )}
       </div>
@@ -53,4 +57,4 @@ export default function InfoArea(){
       )}
     </div>
   );
-}
+};
