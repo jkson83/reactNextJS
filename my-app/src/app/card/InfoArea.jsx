@@ -4,18 +4,20 @@ import {CardContext} from './CardContext';
 import WritePage from './writePage';
 import Button from '@/components/Button';
 
-export default function InfoArea({onClose}) {
+export default function InfoArea() {
   const { list,  selectedId, deleteCard } = useContext(CardContext); //선택된 카드 컴포넌트
-  let tabTitle = "카드정보";
   const selectedItem = list.find(item => item.id === selectedId);
   const [mode, setMode] = useState('view'); //'view' || 'write'
-  
+  const onClose = () => setMode('view');
+
+//  console.log('mode=',mode);
+
   //입력
   if (mode === 'write') {
     return (
       <WritePage
         initialData={null}
-        onClose={() => setMode('view')}
+        onClose={onClose}
       />
     );
   }
@@ -25,7 +27,7 @@ export default function InfoArea({onClose}) {
     return (
       <WritePage
         initialData={selectedItem}
-        onClose={() => setMode('view')}
+        onClose={onClose}
       />
     );
   }
@@ -34,14 +36,12 @@ export default function InfoArea({onClose}) {
 
   return(
     <div className="info-area">
-      <h1>{tabTitle}</h1>
       <div className="btn-area">
-      <button onClick={() => setMode('write')}>입력</button>
+        <Button action="write" onAction={() => setMode('write')} />
         {selectedItem && (
           <>
-            <button onClick={() => setMode('edit')}>수정</button>
-            <button onClick={() => deleteCard(selectedId)}>삭제</button>
-            {/* <Button action="cancel" onAction = {onClose} /> */}
+            <Button action="edit" onAction={() => setMode('edit')} />
+            <Button action="delete" onAction = {() => deleteCard(selectedId)} />
           </>
         )}
       </div>

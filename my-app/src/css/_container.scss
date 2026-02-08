@@ -8,6 +8,7 @@
   .contents{
     background-color: #fff;
     width:100%;
+    //border:1px solid red;
     //height: 100%;
     flex:1;
     padding:40px 20px 20px 60px;
@@ -15,6 +16,12 @@
     overflow-y: auto;
     .openText{
       @include font-bold;
+    }
+    .cont-wrap{
+      //border:1px solid blue;
+    }
+    .title-area{
+      padding-bottom:40px;
     }
   }
 }

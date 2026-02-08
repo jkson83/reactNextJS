@@ -2,6 +2,7 @@
 import { useContext, useState } from 'react';
 import {CardContext, CardProvider} from './CardContext';
 import InfoArea from './InfoArea';
+import SubHeader from '@/components/SubHeader';
 
 //반복 처리 컴포넌트
 function CardItemData({dataitem}){
@@ -64,5 +65,10 @@ const DATAS = [
 ];
 
 export default function Board() {
-  return <CardWrapper datalist={DATAS} />
+  return (
+    <>
+      <SubHeader title="카드정보" />
+      <CardWrapper datalist={DATAS} />
+    </>
+  );
 }
