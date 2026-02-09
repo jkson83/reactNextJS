@@ -1,5 +1,5 @@
 // 카드정보 출력
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import {CardContext} from './CardContext';
 import WritePage from './writePage';
 import Button from '@/components/Button';
@@ -7,10 +7,16 @@ import Button from '@/components/Button';
 export default function InfoArea() {
   const { list,  selectedId, deleteCard } = useContext(CardContext); //선택된 카드 컴포넌트
   const selectedItem = list.find(item => item.id === selectedId);
-  const [mode, setMode] = useState('view'); //'view' || 'write'
+  const [mode, setMode] = useState('view'); //'view' || 'write' 상태지정
   const onClose = () => setMode('view');
 
-//  console.log('mode=',mode);
+  useEffect(() => {
+  if (selectedId !== null) {
+    setMode('view');
+    }
+  }, [selectedId]); //상태 변화 감지
+
+  console.log('mode=',mode);
 
   //입력
   if (mode === 'write') {

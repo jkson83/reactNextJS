@@ -12,7 +12,7 @@ function CardItemData({dataitem}){
   <li className="card-item">
     <div className="cont-wrap">
       {/* 카드선택 */}
-      <div  onClick={() => handleSelect(dataitem.id)}>
+      <div  onClick={() => handleSelect(dataitem.id, "view")}>
         <dl>
           <dt><img src = {dataitem.src} /></dt>
           <dd className="info-area">

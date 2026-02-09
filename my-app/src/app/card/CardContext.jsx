@@ -10,7 +10,9 @@ export function CardProvider({children, initialList}){
   const [list, setList] = useState(initialList); //가져올 데이타리스트를 처리함.
   const [selectedId, setSelectedId] = useState(null); //선택된 데이타을 처리함.
   //카드선택
-  const handleSelect = (id) => setSelectedId(id);
+  const handleSelect = (id) => {
+    setSelectedId(id);
+  };
 
   //좋아요 토글
   const toggleLike = (id) => {

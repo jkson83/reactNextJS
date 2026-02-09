@@ -42,23 +42,27 @@ export default function WritePage({initialData, onClose}){
   //     onClose(); //다시 InfoArea로..
   // }
   return(
-    <div className="wirte-area">
-      <h2>{form.id ? '카드 수정' : '카드 입력'}</h2>
-      <ul>
-        <li>이름 :
+    <div className="write-area">
+      <h2>{form.id ? '정보 수정' : '정보 입력'}</h2>
+      <dl>
+        <dt>이름 </dt>
+        <dd>
           <input type="text" 
           name="name"
           value={form.name}
           onChange={handleChange}/>
-        </li>
-        <li>
-          이미지경로 :
+        </dd>
+      </dl>
+      <dl>
+        <dt>이미지경로</dt>
+        <dd>
           <input type="text" 
-            name="src" 
-            value={form.src} 
+          name="src" 
+          value={form.src} 
             onChange={handleChange} />
-        </li>
-      </ul>
+          <span className="help-text">/image/animal-a.png~animal-i.png 사이에서만 선택가능</span>
+        </dd>
+      </dl>
       <div className="btn-area">
         <Button action={form.id ? "edit" : "save"} onAction={handleSave} />
         <Button action="cancel" onAction={onClose} />
