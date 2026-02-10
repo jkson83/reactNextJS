@@ -64,7 +64,7 @@ const DATAS = [
   {id:5, name: "동물이미지5", src: "/image/animal-e.png", alt: "", like: false},
 ];
 
-export default function Board() {
+export default function Card() {
   return (
     <>
       <SubHeader title="카드정보" />

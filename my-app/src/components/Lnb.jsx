@@ -16,7 +16,7 @@ export default function Lnb() {
             <Link href="/card">card</Link>
           </li>
           <li>
-            <Link href="/todoList">todoList</Link>
+            <Link href="/todo">todoList</Link>
           </li>
           <li>
             <Link href="/game">game</Link>

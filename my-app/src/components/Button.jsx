@@ -1,7 +1,7 @@
 'use client';
 
 export default function Button({ action, onAction }) { 
-  console.log(action);
+  //console.log(action);
   let title = "";
   let className = "";
 
