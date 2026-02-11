@@ -1,7 +1,7 @@
-@import './base';
-@import './font';
-@import './header';
-@import './container';
-@import './lnb';
+@use './base'as *;
+@use './font'as *;
+@use './header'as *;
+@use './container'as *;
+@use './lnb'as *;
 
-@import './card';
+@use './card'as *;

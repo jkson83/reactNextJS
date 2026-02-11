@@ -1,4 +1,4 @@
-"use Client";
+"use client";
 import Lnb from "./Lnb";
 import Contents from "./Contents";
 

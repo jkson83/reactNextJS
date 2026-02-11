@@ -1,3 +1,4 @@
+'use client';
 import styled from "@emotion/styled";
 
 export const TodoWrapper = styled.div`
@@ -52,7 +53,18 @@ export const Filter = {
   border: none;
   background: ${(props) => (props.active ? "#6366f1" : "#e5e7eb")};
   color: ${(props) => (props.active ? "white" : "#374151")};
-  cursor: pointer;`,
+  cursor: pointer;
+  &:first-of-type {
+    border-radius: 6px 0 0 6px;
+  }
+
+  &:last-of-type {
+    border-radius: 0 6px 6px 0;
+  }
+  & + & {
+    border-left: 1px solid #d1d5db;
+  }
+  `,
 };
 
 export const List = {
