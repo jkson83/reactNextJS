@@ -1,0 +1,9 @@
+/* Sass (항상 최상단) */
+@use "./styles/variables";
+@use "./styles/mixins";
+@use "./styles/base";
+/* Tailwind */
+/* stylelint-disable at-rule-no-unknown */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

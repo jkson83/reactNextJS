@@ -1,21 +1,32 @@
 import type { Metadata } from "next";
-import "./globals.css";
 import localFont from "next/font/local";
+import "./globals.scss";
 
 const Pretendard = localFont({
   src: [
     {
-      path: "../font/Pretendard-Regular.woff2",
+      path: "../fonts/Pretendard-Regular.woff2",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../font/Pretendard-Bold.woff2",
+      path: "../fonts/Pretendard-Medium.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Pretendard-SemiBold.woff2",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Pretendard-Bold.woff2",
       weight: "700",
       style: "normal",
-    }
+    },
   ],
-  variable:"--font-sans",
+  variable: "--font-sans",
+  display: "swap",
 });
 
 // import { Geist, Geist_Mono } from "next/font/google";
@@ -40,7 +51,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className={`min-h-full flex flex-col ${Pretendard.variable}`} >{children}</body>
+      <body className={`min-h-full flex flex-col ${Pretendard.variable}`} >
+        <header>GNB</header>
+        {children}
+      </body>
     </html>
   );
 }
