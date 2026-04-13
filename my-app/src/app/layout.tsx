@@ -52,8 +52,22 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className={`min-h-full flex flex-col ${Pretendard.variable}`} >
-        <header>GNB</header>
-        {children}
+        <div className="Wrapper">
+          {/* GNB */}
+          <header className="Header">
+            GNB
+          </header>
+          <div className="Container">
+            {/* LNB */}
+            <aside className="Lnb">
+              LNB
+            </aside>
+            {/* Main */}
+            <main className="Main">
+              {children}
+            </main>
+          </div>
+        </div>
       </body>
     </html>
   );
