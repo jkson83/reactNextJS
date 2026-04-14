@@ -1,6 +1,7 @@
 /* Sass (항상 최상단) */
+@use "tailwindcss";
 @use "./styles/variables";
 @use "./styles/mixins";
 @use "./styles/base";
-@use "tailwindcss";
+
 
