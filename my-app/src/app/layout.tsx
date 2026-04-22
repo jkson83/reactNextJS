@@ -55,11 +55,15 @@ export default function RootLayout({
         <div className="Wrapper">
           {/* GNB */}
           <header className="Header">
-            GNB
+            <ul className="Gnb">
+              <li>Home</li>
+              <li>Board</li>
+              <li>Gallery</li>
+            </ul>
           </header>
           <div className="Container">
             {/* LNB */}
-            <aside className="Lnb">
+            <aside  className="Lnb">
               LNB
             </aside>
             {/* Main */}
